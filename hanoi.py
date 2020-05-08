@@ -10,7 +10,7 @@ def showP():
     print("B: ",*B, sep = " ")
     print("C: ",*C, sep = " ") 
     print("----------------------------")
-    time.sleep(1)
+    time.sleep(0.5)
     
 def move(f,t):
     global moveCount
@@ -34,9 +34,9 @@ def hanoi(n):
         
     showP()
     
-    move1()
-    
-    while len(C) < n:
+    while len(C) != n:
+        move1()
+        
         if A: 
             a = A[-1]
         else:
@@ -59,7 +59,6 @@ def hanoi(n):
         elif b < a and b != 1:
             move(B,A)
             
-        move1()
              
     print("Done in : " + str(moveCount) + " moves")
 
